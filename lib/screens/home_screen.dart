@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: Text('Home')), 
       body: Center( 
         child: Text( 
-          'Welcome to the App!', 
+          'Welcome to STUDIARY!', 
           style: TextStyle(fontSize: 22), 
         ), 
       ), 
