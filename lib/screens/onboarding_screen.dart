@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart'; 
-import 'home_screen.dart'; 
 
 class OnboardingScreen extends StatefulWidget { 
   const OnboardingScreen ({super.key});
@@ -14,7 +13,8 @@ class OnboardingScreenState extends State<OnboardingScreen> {
  
   @override 
   Widget build(BuildContext context) { 
-    return Scaffold( 
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 220, 233, 252), 
       body: Padding( 
         padding: EdgeInsets.all(20), 
         child: PageView( 
@@ -44,15 +44,15 @@ class OnboardingScreenState extends State<OnboardingScreen> {
       bottomSheet: isLastPage 
           ? TextButton( 
               onPressed: () { 
-                Navigator.pushReplacement( 
+                Navigator.pushReplacementNamed( 
                   context, 
-                  MaterialPageRoute(builder: (_) => HomeScreen()), 
+                  "/login"
                 ); 
               }, 
               child: Container( 
                 width: double.infinity, 
                 height: 60, 
-                color: const Color.fromARGB(255, 244, 225, 77), 
+                color: Color(0xFFF5A623), 
                 alignment: Alignment.center, 
                 child: Text( 
                   'Get Started', 
@@ -66,13 +66,13 @@ class OnboardingScreenState extends State<OnboardingScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                 children: [ 
                   TextButton( 
-                    child: Text('Skip'), 
+                    child: Text('Skip', style: TextStyle(color: Color(0xFF4A90E2))), 
                     onPressed: () => _controller.jumpToPage(2), 
                   ), 
                   Row( 
                     children: [ 
                       TextButton( 
-                        child: Text('Next'), 
+                        child: Text('Next', style: TextStyle(color: Color(0xFF4A90E2))), 
                         onPressed: () => _controller.nextPage( 
                           duration: Duration(milliseconds: 500), 
                           curve: Curves.easeInOut, 
@@ -97,18 +97,19 @@ class OnboardingScreenState extends State<OnboardingScreen> {
         Image.asset(image, height: 300), 
         SizedBox(height: 30), 
 
- 
-   
- 
         Text( 
           title, 
-          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold), 
+          style: TextStyle(
+            fontSize: 26, 
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF4A90E2)), 
         ), 
         SizedBox(height: 15), 
         Text( 
           description, 
           textAlign: TextAlign.center, 
-          style: TextStyle(fontSize: 18, color: Colors.grey[700]), 
+          style: TextStyle(fontSize: 18, 
+          color: Colors.grey[600]), 
         ), 
       ], 
     ); 
