@@ -138,7 +138,7 @@ class SignupScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 50,
                       child: OutlinedButton.icon(
-                        icon: Image.asset("images/google_logo.png", height: 24), 
+                        icon: Image.asset("images/goggle_logo.png", height: 24), 
                         label: const Text("Sign up with Google"),
                         style: OutlinedButton.styleFrom(
                         backgroundColor: Colors.white,
